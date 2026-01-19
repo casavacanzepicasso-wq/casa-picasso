@@ -16,7 +16,6 @@
       --muted:#6e5f55;
       --bd:#efdcc6;
       --accent:#f3c55a;
-      --accent2:#e56b2a;
       --shadow: 0 18px 44px rgba(34,26,20,.12);
       --shadow2: 0 10px 22px rgba(34,26,20,.10);
       --r:24px;
@@ -61,7 +60,7 @@
       cursor:pointer;
     }
     .btn.primary{background:var(--accent);border-color:var(--accent)}
-    .btn.sunset{background:rgba(229,107,42,.12);border-color:rgba(229,107,42,.25)}
+    .btn.sunset{background:rgba(255,255,255,.82)}
 
     .pill{
       display:inline-block;border:1px solid rgba(239,220,198,.95);
@@ -75,7 +74,7 @@
       font-size:52px;line-height:1.02;margin:14px 0 10px;
     }
     h2{margin:0;font-size:22px}
-    .sub{font-size:18px;line-height:1.7;color:var(--muted)}
+    .sub{font-size:18px;line-height:1.7;color:var(--muted);margin:0}
 
     .hero{
       display:grid;grid-template-columns:1.05fr .95fr;
@@ -90,7 +89,7 @@
       border:1px solid rgba(239,220,198,.95);
       border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)
     }
-    .hero-right img{width:100%;height:100%;object-fit:cover}
+    .hero-right img{width:100%;height:100%;object-fit:cover;display:block}
 
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
     .mini{border:1px solid rgba(239,220,198,.95);border-radius:18px;padding:12px;background:rgba(251,243,230,.65)}
@@ -107,17 +106,16 @@
 
     .why{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .why div{border:1px solid rgba(239,220,198,.95);border-radius:18px;padding:14px;background:rgba(255,255,255,.75)}
-    .why p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .why p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
 
-    .gallery{
-      display:grid;grid-template-columns:repeat(12,1fr);gap:10px
-    }
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
     .g{border-radius:20px;overflow:hidden;border:1px solid rgba(239,220,198,.95)}
-    .g img{width:100%;height:100%;object-fit:cover}
+    .g img{width:100%;height:100%;object-fit:cover;display:block}
     .big{grid-column:span 7;height:320px}
     .med{grid-column:span 5;height:320px}
     .sm{grid-column:span 4;height:220px}
 
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .li{border:1px solid rgba(239,220,198,.95);border-radius:18px;padding:12px;background:rgba(251,243,230,.65)}
     .li b{display:block}
@@ -125,14 +123,7 @@
 
     footer{margin-top:22px;color:var(--muted);font-size:13px}
 
-    .wa-float{
-      position:fixed;right:16px;bottom:16px;
-      padding:14px 16px;border-radius:999px;
-      background:var(--accent);font-weight:900;
-      box-shadow:0 14px 30px rgba(34,26,20,.18)
-    }
-
-    /* Language switch */
+    /* Language switch pill */
     .lang-switch{display:inline-flex}
     .lang-switch a{
       font-size:12px;font-weight:800;
@@ -143,37 +134,27 @@
     }
     .lang-switch a:hover{background:var(--accent);color:#221a14}
 
+    /* Floating WhatsApp */
+    .wa-float{
+      position:fixed;right:16px;bottom:16px;
+      padding:14px 16px;border-radius:999px;
+      background:var(--accent);font-weight:900;
+      box-shadow:0 14px 30px rgba(34,26,20,.18)
+    }
+
     @media(max-width:980px){
       h1{font-size:40px}
       .hero{grid-template-columns:1fr}
       nav{display:none}
       .why,.list{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
       .big,.med{grid-column:span 12;height:260px}
       .sm{grid-column:span 6;height:200px}
     }
-/* Photo hover micro-interactions */
-.g{
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-}
-.g:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(34,26,20,.18);
-}
-.g img{
-  transition: transform .25s ease;
-}
-.g:hover img{
-  transform: scale(1.03);
-}
-@media (hover: none){
-  .g:hover{ transform:none; box-shadow:none; }
-  .g:hover img{ transform:none; }
-}
   </style>
 </head>
 
 <body>
-
 <header>
   <div class="head">
     <div class="brand">
@@ -193,21 +174,19 @@
 
     <div style="display:flex;align-items:center;gap:10px">
       <div class="lang-switch"><a href="index.html">IT</a></div>
-      <a class="btn primary" id="waTop">WhatsApp</a>
     </div>
   </div>
 </header>
 
 <div class="wrap">
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
       <span class="pill">Holiday apartment · Entire place · 100 sqm</span>
       <h1>Casa Picasso — Naples (Pianura)</h1>
       <p class="sub">
-        Entire 100 sqm apartment with 2 bedrooms, sleeps up to 5 guests (4+1),
-        large terrace, sunset view, easy parking and workspace with Wi-Fi.
+        Entire 100 sqm apartment with 2 bedrooms, up to 5 guests (4+1),
+        large terrace, sunset view, easy parking and a workspace with Wi-Fi (printer available).
       </p>
 
       <div class="kpis">
@@ -216,9 +195,10 @@
         <div class="mini"><strong>Terrace</strong><br>outdoor space</div>
       </div>
 
-      <div style="margin-top:14px">
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn primary" id="waHero">📲 Book on WhatsApp</a>
-        <a class="btn sunset" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank">📍 Google Maps</a>
+        <a class="btn sunset" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank" rel="noreferrer">📍 Google Maps</a>
+        <a class="btn" href="#photos">📷 Photos</a>
       </div>
     </div>
 
@@ -227,93 +207,75 @@
     </div>
   </div>
 
-  <!-- WHY -->
   <section class="section card" id="why">
     <h2>Why choose Casa Picasso</h2>
     <div class="hr"></div>
     <div class="why">
-      <div><strong>Real space</strong><p>True 100 sqm apartment, ideal for families and groups.</p></div>
-      <div><strong>Terrace & sunset view</strong><p>Relax outdoors with a beautiful sunset view.</p></div>
+      <div><strong>Real space</strong><p>True 100 sqm apartment, great for families and groups.</p></div>
+      <div><strong>Terrace & sunset</strong><p>Relax outdoors with a beautiful sunset view.</p></div>
       <div><strong>Remote work</strong><p>Workspace with Wi-Fi and printer.</p></div>
-      <div><strong>Easy parking</strong><p>Free street parking and nearby public parking.</p></div>
-      <div><strong>Comfort bathroom</strong><p>Shower and bathtub.</p></div>
+      <div><strong>Easy parking</strong><p>Parking is easy in the area.</p></div>
+      <div><strong>Full bathroom</strong><p>Shower and bathtub.</p></div>
       <div><strong>Equipped kitchen</strong><p>Perfect for short and long stays.</p></div>
     </div>
   </section>
 
-  <!-- LOCAL -->
   <section class="section card" id="pianura">
     <h2>Pianura area · Naples</h2>
     <div class="hr"></div>
     <p class="sub">
       Casa Picasso is located in Pianura, a residential district in western Naples.
-      Quiet, well connected and convenient for visiting the city.
+      Quiet and well connected—ideal for visiting the city while avoiding heavy traffic and crowds.
     </p>
-    <p class="sub">
-      Close to Fuorigrotta, Bagnoli, Posillipo and the Phlegraean area, with easy access by car.
+    <p class="sub" style="margin-top:10px">
+      Convenient for Fuorigrotta, Bagnoli and Posillipo, with easy access by car thanks to parking availability.
     </p>
   </section>
 
-  <!-- PHOTOS -->
- <section class="section card" id="photos">
-  <h2>Photos</h2>
-  <div class="hr"></div>
-
-  <div class="gallery">
-    <div class="g big">
-      <img src="img/soggiorno-1-panorama.jpg" alt="Living room panorama at Casa Picasso">
-    </div>
-
-    <div class="g med">
-      <img src="img/terrazza-1-panorama.jpg" alt="Panoramic terrace">
-    </div>
-
-    <div class="g sm">
-      <img src="img/vista-1-tramonto.jpg" alt="Sunset view from the terrace">
-    </div>
-
-    <div class="g sm">
-      <img src="img/camera-matrimoniale-1.jpg" alt="Main bedroom">
-    </div>
-
-    <div class="g sm">
-      <img src="img/camera-doppia-1.jpg" alt="Twin bedroom">
-    </div>
-
-    <div class="g sm">
-      <img src="img/cucina-1-panorama.jpg" alt="Fully equipped kitchen">
-    </div>
-
-    <div class="g sm">
-      <img src="img/bagno-1-panorama.jpg" alt="Bathroom with shower and bathtub">
-    </div>
-
-    <div class="g sm">
-      <img src="img/area-lavoro-wifi.jpg" alt="Workspace with Wi-Fi">
-    </div>
-  </div>
-</section>
-
-  <!-- AMENITIES -->
-  <section class="section card">
-    <h2>Amenities</h2>
+  <section class="section card" id="photos">
+    <h2>Photos</h2>
     <div class="hr"></div>
-    <div class="list">
-      <div class="li"><b>Wi-Fi</b><span>Fast and stable connection</span></div>
-      <div class="li"><b>Workspace</b><span>Desk and printer</span></div>
-      <div class="li"><b>Kitchen</b><span>Fully equipped</span></div>
-      <div class="li"><b>Bathroom</b><span>Shower and bathtub</span></div>
-      <div class="li"><b>Terrace</b><span>Spacious and furnished</span></div>
-      <div class="li"><b>Parking</b><span>Easy and free nearby</span></div>
+    <div class="gallery">
+      <div class="g big"><img src="img/soggiorno-1-panorama.jpg" alt="Living room panorama"></div>
+      <div class="g med"><img src="img/terrazza-1-panorama.jpg" alt="Panoramic terrace"></div>
+      <div class="g sm"><img src="img/vista-1-tramonto.jpg" alt="Sunset view"></div>
+      <div class="g sm"><img src="img/camera-matrimoniale-1.jpg" alt="Main bedroom"></div>
+      <div class="g sm"><img src="img/camera-doppia-1.jpg" alt="Twin bedroom"></div>
+      <div class="g sm"><img src="img/cucina-1-panorama.jpg" alt="Kitchen"></div>
+      <div class="g sm"><img src="img/bagno-1-panorama.jpg" alt="Bathroom"></div>
+      <div class="g sm"><img src="img/area-lavoro-wifi.jpg" alt="Workspace"></div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <section class="section grid2">
+    <div class="card">
+      <h2>Amenities</h2>
+      <div class="hr"></div>
+      <div class="list">
+        <div class="li"><b>Wi-Fi</b><span>Stable connection</span></div>
+        <div class="li"><b>Workspace</b><span>Desk + printer</span></div>
+        <div class="li"><b>Kitchen</b><span>Fully equipped</span></div>
+        <div class="li"><b>Bathroom</b><span>Shower + bathtub</span></div>
+        <div class="li"><b>Terrace</b><span>Spacious outdoor area</span></div>
+        <div class="li"><b>Parking</b><span>Easy in the area</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Parking</h2>
+      <div class="hr"></div>
+      <p class="sub">
+        Free street parking with good availability. Nearby public parking is also available.
+      </p>
+      <div style="height:12px"></div>
+      <a class="btn" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank" rel="noreferrer">🅿️ Parking / Area</a>
+    </div>
+  </section>
+
   <section class="section card" id="contact">
     <h2>Book</h2>
     <div class="hr"></div>
-    <p class="sub">Contact us on WhatsApp for availability and prices.</p>
-    <a class="btn primary" id="waBottom">📲 Book on WhatsApp</a>
+    <p class="sub">For availability and prices, message us on WhatsApp. Quick reply.</p>
   </section>
 
   <footer>© <span id="y"></span> Casa Picasso · Naples Pianura</footer>
@@ -322,10 +284,17 @@
 <a class="wa-float" id="waFloat">WhatsApp</a>
 
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-  const wa = "https://wa.me/3908118558253?text=Hello!%20I%20would%20like%20information%20about%20Casa%20Picasso.%0ADates:%20__%0AGuests:%20__";
-  ["waTop","waHero","waBottom","waFloat"].forEach(id=>document.getElementById(id).href=wa);
-</script>
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
 
+  const wa = "https://wa.me/3908118558253?text=" + encodeURIComponent(
+    "Hello! I would like information about Casa Picasso.\nDates: __ / __\nGuests: __\nThanks!"
+  );
+
+  ["waHero","waFloat"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.href = wa;
+  });
+</script>
 </body>
 </html>
