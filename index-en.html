@@ -1,4 +1,8 @@
-<div class="lang-switch"><a href="index.html">IT</a></div>
+<nav>…</nav>
+<div class="lang-switch">
+  <a href="index-it.html">IT</a>
+</div>
+<a class="btn primary" id="waTop">WhatsApp</a>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Casa Picasso | Holiday Apartment in Naples Pianura · 100 sqm with Terrace</title>
-  <meta name="description" content="Casa Picasso is a holiday apartment in Naples (Pianura). 100 sqm, 2 bedrooms, sleeps up to 5 guests, large terrace, easy parking and workspace with Wi-Fi. Book directly on WhatsApp.">
+  <meta name="description" content="Casa Picasso is a holiday apartment in Naples (Pianura). 100 sqm, 2 bedrooms, sleeps up to 5 guests (4+1), large terrace, sunset view, easy parking and workspace with Wi-Fi. Book directly on WhatsApp.">
 
   <style>
     :root{
@@ -59,6 +63,7 @@
       border:1px solid var(--bd);background:var(--card);
       font-weight:900;font-size:14px;
       box-shadow:0 2px 0 rgba(34,26,20,.04);
+      cursor:pointer;
     }
     .btn.primary{background:var(--accent);border-color:var(--accent)}
     .btn.sunset{background:rgba(229,107,42,.12);border-color:rgba(229,107,42,.25)}
@@ -107,9 +112,25 @@
 
     .why{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .why div{border:1px solid rgba(239,220,198,.95);border-radius:18px;padding:14px;background:rgba(255,255,255,.75)}
+    .why p{margin:6px 0 0;color:var(--muted);line-height:1.5;font-size:13px}
+
+    .gallery{
+      display:grid;grid-template-columns:repeat(12,1fr);gap:10px
+    }
+    .g{border-radius:20px;overflow:hidden;border:1px solid rgba(239,220,198,.95)}
+    .g img{width:100%;height:100%;object-fit:cover}
+    .big{grid-column:span 7;height:320px}
+    .med{grid-column:span 5;height:320px}
+    .sm{grid-column:span 4;height:220px}
+
+    .list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .li{border:1px solid rgba(239,220,198,.95);border-radius:18px;padding:12px;background:rgba(251,243,230,.65)}
+    .li b{display:block;margin-bottom:4px}
+    .li span{display:block;color:var(--muted);font-size:13px;line-height:1.45}
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
     footer{margin-top:22px;color:var(--muted);font-size:13px}
-
     .wa-float{
       position:fixed;right:16px;bottom:16px;
       padding:14px 16px;border-radius:999px;
@@ -117,30 +138,26 @@
       box-shadow:0 14px 30px rgba(34,26,20,.18)
     }
 
+    /* Language switch pill */
+    .lang-switch{display:inline-flex;gap:6px}
+    .lang-switch a{
+      font-size:12px;font-weight:800;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(239,220,198,.95);
+      background:rgba(255,255,255,.75);
+      color:var(--muted);
+    }
+    .lang-switch a:hover{background:var(--accent);color:#221a14}
+
     @media(max-width:980px){
       h1{font-size:40px}
       .hero{grid-template-columns:1fr}
       nav{display:none}
-      .why{grid-template-columns:1fr}
+      .why,.list{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .big,.med{grid-column:span 12;height:260px}
+      .sm{grid-column:span 6;height:200px}
     }
-    .lang-switch{
-  display:inline-flex;
-  gap:6px;
-}
-.lang-switch a{
-  font-size:12px;
-  font-weight:800;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(239,220,198,.95);
-  background:rgba(255,255,255,.75);
-  color:var(--muted);
-}
-.lang-switch a:hover{
-  background:var(--accent);
-  color:#221a14;
-}
-
   </style>
 </head>
 
@@ -151,64 +168,126 @@
       <img src="img/logo-casa-picasso.jpg" alt="Casa Picasso Naples">
       <div><strong>Casa Picasso</strong><br><span style="font-size:12px;color:var(--muted)">Naples · Pianura</span></div>
     </div>
+
     <nav>
       <a href="#why">Why us</a>
-      <a href="#location">Location</a>
-      <a href="index.html">IT</a>
+      <a href="#pianura">Pianura</a>
+      <a href="#photos">Photos</a>
+      <a href="#contact">Book</a>
     </nav>
+
+    <div class="lang-switch"><a href="index.html">IT</a></div>
+
     <a class="btn primary" id="waTop">WhatsApp</a>
   </div>
 </header>
 
 <div class="wrap">
 
+  <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
       <span class="pill">Holiday apartment · Entire place · 100 sqm</span>
       <h1>Casa Picasso — Naples (Pianura)</h1>
       <p class="sub">
-        Spacious 100 sqm apartment with 2 bedrooms, sleeps up to 5 guests (4+1),
-        large terrace, sunset view, easy parking and workspace with Wi-Fi.
+        Entire 100 sqm apartment with 2 bedrooms, sleeps up to 5 guests (4+1), large terrace,
+        sunset view, easy parking and a workspace with Wi-Fi (printer available).
       </p>
+
       <div class="kpis">
         <div class="mini"><strong>100</strong><br>sqm</div>
         <div class="mini"><strong>5</strong><br>guests</div>
         <div class="mini"><strong>Terrace</strong><br>outdoor space</div>
       </div>
+
       <div style="margin-top:14px">
         <a class="btn primary" id="waHero">📲 Book on WhatsApp</a>
         <a class="btn sunset" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank">📍 Google Maps</a>
       </div>
     </div>
+
     <div class="hero-right">
       <img src="img/soggiorno-1-panorama.jpg" alt="Living room Casa Picasso">
     </div>
   </div>
 
+  <!-- WHY -->
   <section class="section card" id="why">
     <h2>Why choose Casa Picasso</h2>
     <div class="hr"></div>
     <div class="why">
-      <div><strong>Real space</strong><p>100 sqm apartment, perfect for families and small groups.</p></div>
+      <div><strong>Real space</strong><p>True 100 sqm apartment, great for families and small groups.</p></div>
       <div><strong>Terrace & sunset view</strong><p>Covered outdoor space to relax and enjoy the view.</p></div>
-      <div><strong>Remote work friendly</strong><p>Dedicated workspace with Wi-Fi and printer.</p></div>
+      <div><strong>Remote-work friendly</strong><p>Dedicated workspace with Wi-Fi and printer.</p></div>
       <div><strong>Easy parking</strong><p>Free street parking and nearby public parking.</p></div>
       <div><strong>Full bathroom</strong><p>Shower and bathtub for extra comfort.</p></div>
       <div><strong>Equipped kitchen</strong><p>Ideal for short and long stays.</p></div>
     </div>
   </section>
 
-  <section class="section card" id="location">
+  <!-- LOCAL SEO -->
+  <section class="section card" id="pianura">
     <h2>Pianura area · Naples</h2>
     <div class="hr"></div>
     <p class="sub">
-      Casa Picasso is located in Pianura, a residential district in western Naples.
-      The area is quiet, well connected and ideal for visiting the city while avoiding traffic and crowds.
+      Casa Picasso is located in <strong>Pianura</strong>, a residential district in western <strong>Naples</strong>.
+      The area is quiet and well connected—ideal for visiting the city while avoiding heavy traffic and crowds.
     </p>
     <p class="sub">
-      Pianura is convenient for Fuorigrotta, Bagnoli, Posillipo and the Phlegraean area,
-      with easy access by car and public transport.
+      Pianura is convenient for <strong>Fuorigrotta</strong>, <strong>Bagnoli</strong>, <strong>Posillipo</strong>
+      and the Phlegraean area. Parking availability makes it easier for guests travelling by car.
     </p>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="section card" id="photos">
+    <h2>Photos</h2>
+    <div class="hr"></div>
+    <div class="gallery">
+      <div class="g big"><img src="img/soggiorno-1-panorama.jpg" alt="Living room panorama"></div>
+      <div class="g med"><img src="img/terrazza-1-panorama.jpg" alt="Terrace panorama"></div>
+      <div class="g sm"><img src="img/vista-1-tramonto.jpg" alt="Sunset view"></div>
+      <div class="g sm"><img src="img/camera-matrimoniale-1.jpg" alt="Main bedroom"></div>
+      <div class="g sm"><img src="img/camera-doppia-1.jpg" alt="Twin bedroom"></div>
+      <div class="g sm"><img src="img/cucina-1-panorama.jpg" alt="Kitchen"></div>
+      <div class="g sm"><img src="img/bagno-1-panorama.jpg" alt="Bathroom"></div>
+      <div class="g sm"><img src="img/area-lavoro-wifi.jpg" alt="Workspace"></div>
+      <div class="g sm"><img src="img/parcheggio-1-area.jpg" alt="Parking"></div>
+    </div>
+  </section>
+
+  <!-- AMENITIES + PARKING -->
+  <section class="section grid2">
+    <div class="card" id="amenities">
+      <h2>Amenities</h2>
+      <div class="hr"></div>
+      <div class="list">
+        <div class="li"><b>Wi-Fi</b><span>Stable connection, great for remote work.</span></div>
+        <div class="li"><b>Workspace</b><span>Dedicated area with printer.</span></div>
+        <div class="li"><b>Kitchen</b><span>Equipped and bright, with dining table.</span></div>
+        <div class="li"><b>Bathroom</b><span>Shower and bathtub.</span></div>
+        <div class="li"><b>Terrace</b><span>Spacious, furnished and covered.</span></div>
+        <div class="li"><b>Parking</b><span>Easy in the area + nearby public parking.</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="parking">
+      <h2>Parking</h2>
+      <div class="hr"></div>
+      <p class="sub">
+        Free street parking with good availability, also right outside. ANM Pianura public parking is nearby.
+      </p>
+      <div style="height:12px"></div>
+      <a class="btn" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank">🅿️ Parking / Area</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section card" id="contact">
+    <h2>Book</h2>
+    <div class="hr"></div>
+    <p class="sub">Message us on WhatsApp with your dates and number of guests. Quick reply.</p>
+    <a class="btn primary" id="waBottom">📲 Book on WhatsApp</a>
   </section>
 
   <footer>© <span id="y"></span> Casa Picasso · Naples Pianura</footer>
@@ -216,10 +295,27 @@
 
 <a class="wa-float" id="waFloat">WhatsApp</a>
 
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LodgingBusiness",
+  "name":"Casa Picasso",
+  "url":"https://casapicasso.it/index-en.html",
+  "telephone":"+3908118558253",
+  "address":{
+    "@type":"PostalAddress",
+    "addressLocality":"Pianura",
+    "addressRegion":"NA",
+    "addressCountry":"IT"
+  }
+}
+</script>
+
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
-  const wa = "https://wa.me/3908118558253?text=Hello!%20I%20would%20like%20to%20get%20information%20about%20Casa%20Picasso";
-  ["waTop","waHero","waFloat"].forEach(id=>document.getElementById(id).href=wa);
+  const wa = "https://wa.me/3908118558253?text=Hello!%20I%20would%20like%20to%20get%20information%20about%20Casa%20Picasso.%0ADates:%20__%20/%20__%0AGuests:%20__%0AThanks!";
+  ["waTop","waHero","waBottom","waFloat"].forEach(id=>document.getElementById(id).href=wa);
 </script>
 </body>
 </html>
