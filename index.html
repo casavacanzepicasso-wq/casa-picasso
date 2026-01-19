@@ -3,166 +3,429 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Casa Picasso — Napoli (Pianura)</title>
-  <meta name="description" content="Casa Picasso: appartamento intero 100 mq a Napoli (Pianura). 2 camere, 5 posti letto, terrazza e parcheggio facile. Prenota su WhatsApp." />
+  <title>Casa Picasso — Napoli (Pianura) · Appartamento 100 mq con terrazza</title>
+  <meta name="description" content="Casa Picasso: appartamento intero 100 mq a Napoli (Pianura). 2 camere, 5 ospiti (4+1), terrazza ampia, vista al tramonto, area lavoro con Wi-Fi+stampante e parcheggio facile. Prenota su WhatsApp." />
+
   <style>
-    :root{--bg:#fbf7ef;--card:#fff;--txt:#1e1a16;--muted:#5f564f;--bd:#eadfce;--accent:#f3c55a;--shadow:0 10px 28px rgba(30,26,22,.08);--r:18px}
+    :root{
+      --bg:#fbf3e6;
+      --bg2:#fff7ec;
+      --card:#ffffff;
+      --txt:#221a14;
+      --muted:#6e5f55;
+      --bd:#efdcc6;
+      --accent:#f3c55a;
+      --accent2:#e56b2a;
+      --shadow: 0 18px 44px rgba(34,26,20,.12);
+      --shadow2: 0 10px 22px rgba(34,26,20,.10);
+      --r:24px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt)}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--txt);
+      background: radial-gradient(900px 600px at 12% 0%, #ffffff 0%, var(--bg2) 45%, var(--bg) 100%);
+    }
     a{color:inherit;text-decoration:none}
-    header{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(234,223,206,.8)}
-    .head{max-width:1100px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:44px;width:auto;border-radius:12px;border:1px solid rgba(234,223,206,.9);background:#fff}
-    nav{display:flex;gap:10px;flex-wrap:wrap}
-    nav a{font-size:14px;color:var(--muted);padding:8px 10px;border-radius:12px}
-    nav a:hover{background:rgba(243,197,90,.18);color:var(--txt)}
-    .wrap{max-width:1100px;margin:0 auto;padding:22px 18px 80px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;border:1px solid var(--bd);background:var(--card);font-weight:800;font-size:14px}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background: rgba(255,247,236,.78);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(239,220,198,.85);
+    }
+    .head{
+      max-width:1140px;margin:0 auto;padding:12px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
+    .brand img{
+      height:48px;width:auto;border-radius:16px;
+      border:1px solid rgba(239,220,198,.95);
+      background:#fff;
+      box-shadow: var(--shadow2);
+    }
+    .brand b{font-size:16px}
+    .brand span{font-size:12px;color:var(--muted)}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    nav a{
+      font-size:14px;color:var(--muted);
+      padding:8px 10px;border-radius:12px;
+    }
+    nav a:hover{background: rgba(243,197,90,.20);color: var(--txt)}
+    .wrap{max-width:1140px;margin:0 auto;padding:26px 18px 96px}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid var(--bd);
+      background:var(--card);
+      font-weight:900;font-size:14px;
+      box-shadow: 0 2px 0 rgba(34,26,20,.04);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2)}
     .btn.primary{background:var(--accent);border-color:var(--accent)}
-    .pill{display:inline-block;border:1px solid var(--bd);background:rgba(255,255,255,.6);padding:7px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
-    h1{font-family:ui-serif,Georgia,"Times New Roman",Times,serif;font-size:44px;line-height:1.05;margin:14px 0 10px}
-    .sub{font-size:18px;line-height:1.6;color:var(--muted);max-width:78ch;margin:0}
-    .card{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}
-    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;margin-top:18px}
-    .photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-    .photos img{width:100%;height:240px;object-fit:cover;border-radius:16px;border:1px solid rgba(234,223,206,.9)}
-    .hr{height:1px;background:rgba(234,223,206,.9);margin:14px 0}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+    .btn.sunset{background: rgba(229,107,42,.12); border-color: rgba(229,107,42,.25)}
+    .btn.ghost{background:transparent}
+
+    .pill{
+      display:inline-block;
+      border:1px solid rgba(239,220,198,.95);
+      background: rgba(255,255,255,.62);
+      padding:7px 10px;border-radius:999px;
+      font-size:12px;color:var(--muted);
+    }
+
+    h1{
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      font-size:52px;line-height:1.02;margin:14px 0 10px;
+      letter-spacing:-.25px;
+    }
+    .sub{
+      font-size:18px;line-height:1.7;color:var(--muted);
+      max-width:80ch;margin:0;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:10px;
+    }
+    .hero-left{
+      padding:22px;
+      border:1px solid rgba(239,220,198,.95);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.72);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-90px -90px auto auto;
+      width:260px;height:260px;border-radius:999px;
+      background: rgba(243,197,90,.30);
+    }
+    .hero-left:after{
+      content:"";
+      position:absolute; inset:auto auto -100px -100px;
+      width:260px;height:260px;border-radius:999px;
+      background: rgba(229,107,42,.16);
+    }
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;position:relative}
+
+    .hero-right{
+      border:1px solid rgba(239,220,198,.95);
+      border-radius: var(--r);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .hero-photo{
+      height:100%;
+      min-height: 330px;
+      background:#f2e3d2;
+      position:relative;
+    }
+    .hero-photo img{
+      width:100%;height:100%;object-fit:cover;display:block;
+    }
+    .hero-badge{
+      position:absolute; left:14px; bottom:14px;
+      background: rgba(255,255,255,.80);
+      border:1px solid rgba(239,220,198,.95);
+      border-radius: 18px;
+      padding:10px 12px;
+      box-shadow: var(--shadow2);
+      font-size:13px;
+      color: var(--muted);
+    }
+
+    .section{margin-top:18px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .card{
+      background:var(--card);
+      border:1px solid rgba(239,220,198,.95);
+      border-radius: var(--r);
+      box-shadow: var(--shadow2);
+      padding:18px;
+    }
+    .card h2{margin:0;font-size:20px}
+    .hr{height:1px;background:rgba(239,220,198,.95);margin:14px 0}
+
+    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px;position:relative}
+    .mini{
+      border:1px solid rgba(239,220,198,.95);
+      border-radius:18px;
+      padding:12px;
+      background: rgba(251,243,230,.65);
+    }
+    .mini .n{font-size:18px;font-weight:950}
+    .mini .l{font-size:12px;color:var(--muted);margin-top:2px}
+
+    .list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .li{
+      border:1px solid rgba(239,220,198,.95);
+      border-radius:18px;
+      padding:12px;
+      background: rgba(251,243,230,.65);
+    }
+    .li b{display:block;margin-bottom:4px}
+    .li span{display:block;color:var(--muted);font-size:13px;line-height:1.45}
+
+    .why{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:12px;
+    }
+    .why .w{
+      border:1px solid rgba(239,220,198,.95);
+      border-radius:18px;
+      background: rgba(255,255,255,.72);
+      padding:14px;
+      box-shadow: 0 6px 14px rgba(34,26,20,.06);
+    }
+    .why .w b{display:block;margin-bottom:6px}
+    .why .w p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:10px;
+    }
+    .g{
+      border-radius:20px;
+      border:1px solid rgba(239,220,198,.95);
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      background:#f2e3d2;
+    }
+    .g img{width:100%;height:100%;object-fit:cover;display:block}
+    .g.big{grid-column: span 7; height: 330px;}
+    .g.med{grid-column: span 5; height: 330px;}
+    .g.sm{grid-column: span 4; height: 220px;}
+
     footer{margin-top:22px;color:var(--muted);font-size:13px}
-    .wa-float{position:fixed;right:16px;bottom:16px;z-index:999;display:inline-flex;align-items:center;gap:10px;padding:14px 16px;border-radius:999px;border:1px solid rgba(234,223,206,.9);background:var(--accent);box-shadow:0 14px 30px rgba(30,26,22,.16);font-weight:900}
+
+    .wa-float{
+      position:fixed;right:16px;bottom:16px;z-index:999;
+      display:inline-flex;align-items:center;gap:10px;
+      padding:14px 16px;border-radius:999px;
+      border:1px solid rgba(239,220,198,.95);
+      background: var(--accent);
+      box-shadow: 0 14px 30px rgba(34,26,20,.18);
+      font-weight:950;
+    }
     .wa-dot{width:10px;height:10px;border-radius:999px;background:#2fd566;box-shadow:0 0 0 4px rgba(47,213,102,.18)}
-    @media (max-width:960px){h1{font-size:36px}.grid,.two{grid-template-columns:1fr}.photos{grid-template-columns:1fr 1fr}nav{display:none}}
+
+    @media (max-width:980px){
+      h1{font-size:42px}
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+      .grid2{grid-template-columns:1fr}
+      .list{grid-template-columns:1fr}
+      .why{grid-template-columns:1fr}
+      .g.big,.g.med{grid-column: span 12; height: 280px;}
+      .g.sm{grid-column: span 6; height: 210px;}
+    }
   </style>
 </head>
+
 <body>
+  <header>
+    <div class="head">
+      <div class="brand">
+        <img src="img/logo-casa-picasso.jpg" alt="Casa Picasso Napoli" />
+        <div>
+          <b>Casa Picasso</b><br/>
+          <span>Napoli · Pianura</span>
+        </div>
+      </div>
 
-<header>
-  <div class="head">
-    <div class="brand">
-      <img src="img/logo-casa-picasso.jpg" alt="Casa Picasso Napoli" />
-      <div><b>Casa Picasso</b><br><span style="font-size:12px;color:var(--muted)">Napoli · Pianura</span></div>
+      <nav>
+        <a href="#perche">Perché noi</a>
+        <a href="#foto">Foto</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#dove">Dove</a>
+        <a href="#parcheggio">Parcheggio</a>
+        <a href="#contatti">Prenota</a>
+      </nav>
+
+      <a class="btn primary" id="waTop" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
     </div>
-    <nav>
-      <a href="#foto">Foto</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#dove">Dove</a>
-      <a href="#parcheggio">Parcheggio</a>
-      <a href="#contatti">Prenota</a>
-    </nav>
-    <a class="btn primary" id="waTop" href="#" target="_blank" rel="noreferrer">WhatsApp</a>
-  </div>
-</header>
+  </header>
 
-<div class="wrap">
-  <span class="pill">Casa vacanze · Appartamento intero · 100 mq</span>
-  <h1>Casa Picasso — Napoli (Pianura)</h1>
-  <p class="sub">
-    Appartamento completo di <b>100 mq</b> con <b>2 camere da letto</b>, <b>posti letto 4+1</b>
-    (con <b>lettino singolo richiudibile</b>) e <b>1 bagno</b>. Terrazza ampia e parcheggio facile in zona.
-  </p>
+  <div class="wrap" id="top">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-left">
+        <span class="pill">Casa vacanze · Appartamento intero · 100 mq</span>
+        <h1>Casa Picasso — Napoli (Pianura)</h1>
+        <p class="sub">
+          2 camere da letto · 5 ospiti (4+1 con lettino richiudibile) · 1 bagno completo (doccia + vasca).
+          Terrazza ampia e vivibile, vista aperta al tramonto, parcheggio facile e area lavoro con Wi-Fi + stampante.
+        </p>
 
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-    <a class="btn primary" id="waHero" href="#" target="_blank" rel="noreferrer">📲 Prenota su WhatsApp</a>
-    <a class="btn" href="#foto">📷 Vedi foto</a>
-    <a class="btn" href="#dove">📍 Posizione</a>
-  </div>
+        <div class="cta">
+          <a class="btn primary" id="waHero" href="#" target="_blank" rel="noreferrer">📲 Prenota su WhatsApp</a>
+          <a class="btn" href="#foto">📷 Foto</a>
+          <a class="btn sunset" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank" rel="noreferrer">📍 Google Maps</a>
+        </div>
 
-  <div class="grid">
-    <div class="card">
-      <b style="font-size:18px">In evidenza</b>
-      <div class="hr"></div>
-      <ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.6">
-        <li><b>5 ospiti</b> · 2 camere · 1 bagno</li>
-        <li><b>Area lavoro</b> con Wi-Fi e stampante</li>
-        <li><b>Terrazza</b> ampia e vivibile</li>
-        <li><b>Parcheggio</b> facile + ANM Pianura vicino</li>
-      </ul>
-    </div>
+        <div class="kpis">
+          <div class="mini"><div class="n">100</div><div class="l">mq</div></div>
+          <div class="mini"><div class="n">5</div><div class="l">ospiti</div></div>
+          <div class="mini"><div class="n">Terrazza</div><div class="l">ampia & coperta</div></div>
+        </div>
+      </div>
 
-    <div class="card" id="foto">
-      <b style="font-size:18px">Foto</b>
-      <div class="hr"></div>
-      <div class="photos">
-        <img src="img/soggiorno-1-panorama.jpg" alt="Soggiorno panoramica">
-        <img src="img/soggiorno-2-spazio.jpg" alt="Soggiorno ampio">
-        <img src="img/soggiorno-3-divano.jpg" alt="Soggiorno divano">
-        <img src="img/area-lavoro-wifi.jpg" alt="Area lavoro Wi-Fi stampante">
-        <img src="img/terrazza-1-panorama.jpg" alt="Terrazza panoramica">
-        <img src="img/terrazza-2-relax.jpg" alt="Terrazza relax">
-        <img src="img/camera-matrimoniale-1.jpg" alt="Camera matrimoniale">
-        <img src="img/camera-doppia-1.jpg" alt="Camera doppia">
-        <img src="img/cucina-1-panorama.jpg" alt="Cucina">
-        <img src="img/bagno-1-panorama.jpg" alt="Bagno">
-        <img src="img/balcone-1-vista.jpg" alt="Balcone vista">
-        <img src="img/parcheggio-1-area.jpg" alt="Parcheggio in zona">
+      <div class="hero-right">
+        <div class="hero-photo">
+          <img src="img/soggiorno-1-panorama.jpg" alt="Soggiorno Casa Picasso">
+          <div class="hero-badge">☀️ Luminoso · 🅿️ Parcheggio facile · 🌅 Vista al tramonto</div>
+        </div>
       </div>
     </div>
+
+    <!-- WHY US -->
+    <section class="section card" id="perche">
+      <h2>Perché scegliere Casa Picasso</h2>
+      <div class="hr"></div>
+
+      <div class="why">
+        <div class="w">
+          <b>Spazio vero: 100 mq</b>
+          <p>Appartamento ampio, ideale per famiglie e piccoli gruppi. Qui non si sta stretti.</p>
+        </div>
+        <div class="w">
+          <b>Terrazza + vista al tramonto</b>
+          <p>Area esterna vivibile e coperta: perfetta per rilassarsi, leggere o bere qualcosa all’aperto.</p>
+        </div>
+        <div class="w">
+          <b>Smart working facile</b>
+          <p>Area lavoro dedicata con Wi-Fi e stampante, per chi viaggia anche per lavoro.</p>
+        </div>
+        <div class="w">
+          <b>Parcheggio comodo</b>
+          <p>Parcheggio gratuito su strada con buona disponibilità e parcheggio ANM Pianura vicino.</p>
+        </div>
+        <div class="w">
+          <b>Bagno completo</b>
+          <p>Doccia e vasca: comodo anche per soggiorni lunghi e famiglie.</p>
+        </div>
+        <div class="w">
+          <b>Cucina attrezzata</b>
+          <p>Spazi e dotazioni per sentirsi a casa e gestire colazione/pranzi in autonomia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section card" id="foto">
+      <h2>Foto</h2>
+      <div class="hr"></div>
+
+      <div class="gallery">
+        <div class="g big"><img src="img/soggiorno-1-panorama.jpg" alt="Soggiorno panoramica"></div>
+        <div class="g med"><img src="img/terrazza-1-panorama.jpg" alt="Terrazza panoramica"></div>
+
+        <div class="g sm"><img src="img/vista-1-tramonto.jpg" alt="Vista al tramonto"></div>
+        <div class="g sm"><img src="img/camera-matrimoniale-1.jpg" alt="Camera matrimoniale"></div>
+        <div class="g sm"><img src="img/camera-doppia-1.jpg" alt="Camera doppia"></div>
+
+        <div class="g sm"><img src="img/cucina-1-panorama.jpg" alt="Cucina"></div>
+        <div class="g sm"><img src="img/bagno-1-panorama.jpg" alt="Bagno"></div>
+        <div class="g sm"><img src="img/area-lavoro-wifi.jpg" alt="Area lavoro"></div>
+
+        <div class="g sm"><img src="img/terrazza-2-relax.jpg" alt="Terrazza relax"></div>
+        <div class="g sm"><img src="img/balcone-1-vista.jpg" alt="Balcone con vista"></div>
+        <div class="g sm"><img src="img/parcheggio-1-area.jpg" alt="Parcheggio in zona"></div>
+      </div>
+    </section>
+
+    <!-- SERVICES + LOCATION -->
+    <section class="section grid2">
+      <div class="card" id="servizi">
+        <h2>Servizi</h2>
+        <div class="hr"></div>
+
+        <div class="list">
+          <div class="li"><b>Wi-Fi</b><span>Connessione stabile, ideale anche per smart working.</span></div>
+          <div class="li"><b>Area lavoro</b><span>Spazio dedicato con stampante.</span></div>
+          <div class="li"><b>Cucina</b><span>Attrezzata e luminosa, con tavolo da pranzo.</span></div>
+          <div class="li"><b>Bagno</b><span>Completo con doccia e vasca.</span></div>
+          <div class="li"><b>Terrazza</b><span>Ampia, attrezzata e coperta.</span></div>
+          <div class="li"><b>Parcheggio</b><span>Facile in zona + ANM Pianura vicino.</span></div>
+        </div>
+      </div>
+
+      <div class="card" id="dove">
+        <h2>Dove siamo</h2>
+        <p style="margin:10px 0 0;color:var(--muted);line-height:1.6">
+          Napoli, quartiere Pianura. Zona residenziale comoda per muoversi in area occidentale e verso la città.
+        </p>
+        <div class="hr"></div>
+        <a class="btn" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank" rel="noreferrer">📍 Apri su Google Maps</a>
+      </div>
+    </section>
+
+    <!-- PARKING + BOOK -->
+    <section class="section grid2">
+      <div class="card" id="parcheggio">
+        <h2>Parcheggio</h2>
+        <div class="hr"></div>
+        <p style="margin:0;color:var(--muted);line-height:1.7">
+          Parcheggio gratuito su strada con buona disponibilità anche sotto casa.
+          A breve distanza è presente anche il parcheggio ANM Pianura.
+        </p>
+        <div style="height:12px"></div>
+        <a class="btn" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank" rel="noreferrer">🅿️ Parcheggio / Zona</a>
+      </div>
+
+      <div class="card" id="contatti">
+        <h2>Prenota</h2>
+        <div class="hr"></div>
+        <p style="margin:0;color:var(--muted);line-height:1.7">
+          Scrivici su WhatsApp indicando date e numero ospiti. Rispondiamo velocemente.
+        </p>
+        <div style="height:12px"></div>
+        <a class="btn primary" id="waBottom" href="#" target="_blank" rel="noreferrer">📲 Prenota su WhatsApp</a>
+        <div class="hr"></div>
+        <p style="margin:0;color:var(--muted);font-size:12px;line-height:1.6">
+          Privacy: i messaggi WhatsApp sono usati solo per rispondere alla richiesta di soggiorno.
+        </p>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Casa Picasso · Napoli (Pianura)</footer>
   </div>
 
-  <div class="two">
-    <div class="card" id="servizi">
-      <b style="font-size:18px">Servizi</b>
-      <div class="hr"></div>
-      <ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.6">
-        <li>Wi-Fi</li>
-        <li>Area lavoro con stampante</li>
-        <li>Cucina attrezzata</li>
-        <li>Bagno completo (doccia + vasca)</li>
-        <li>Terrazza</li>
-      </ul>
-    </div>
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noreferrer"><span class="wa-dot"></span> WhatsApp</a>
 
-    <div class="card" id="dove">
-      <b style="font-size:18px">Dove siamo</b>
-      <div class="hr"></div>
-      <p style="margin:0;color:var(--muted);line-height:1.6">
-        Napoli, quartiere Pianura.
-      </p>
-      <div style="height:12px"></div>
-      <a class="btn" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank" rel="noreferrer">📍 Apri su Google Maps</a>
-    </div>
-  </div>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
 
-  <div class="two">
-    <div class="card" id="parcheggio">
-      <b style="font-size:18px">Parcheggio</b>
-      <div class="hr"></div>
-      <p style="margin:0;color:var(--muted);line-height:1.6">
-        Parcheggio gratuito su strada con ampia disponibilità anche sotto casa. Presente anche il parcheggio ANM Pianura nelle vicinanze.
-      </p>
-    </div>
+    // WhatsApp config
+    const phone = "3908118558253";
+    const msg =
+      "Ciao! Vorrei informazioni per un soggiorno a Casa Picasso.%0A" +
+      "Date: __ / __%0A" +
+      "Ospiti: __%0A" +
+      "Orario arrivo (se noto): __%0A" +
+      "Grazie!";
+    const wa = `https://wa.me/${phone}?text=${msg}`;
 
-    <div class="card" id="contatti">
-      <b style="font-size:18px">Prenota</b>
-      <div class="hr"></div>
-      <p style="margin:0;color:var(--muted);line-height:1.6">
-        Scrivici su WhatsApp indicando date e numero ospiti. Rispondiamo velocemente.
-      </p>
-      <div style="height:12px"></div>
-      <a class="btn primary" id="waBottom" href="#" target="_blank" rel="noreferrer">📲 Prenota su WhatsApp</a>
-    </div>
-  </div>
-
-  <footer>© <span id="y"></span> Casa Picasso · Napoli (Pianura)</footer>
-</div>
-
-<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noreferrer"><span class="wa-dot"></span> WhatsApp</a>
-
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-  const phone = "3908118558253";
-  const msg = "Ciao! Vorrei informazioni per un soggiorno a Casa Picasso.%0A" +
-              "Date: __ / __%0A" +
-              "Ospiti: __%0A" +
-              "Orario arrivo (se noto): __%0A" +
-              "Grazie!";
-  const wa = `https://wa.me/${phone}?text=${msg}`;
-  ["waTop","waHero","waBottom","waFloat"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.href = wa;
-  });
-</script>
-
+    ["waTop","waHero","waBottom","waFloat"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = wa;
+    });
+  </script>
 </body>
 </html>
