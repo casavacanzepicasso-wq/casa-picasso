@@ -1,8 +1,3 @@
-<nav>…</nav>
-<div class="lang-switch">
-  <a href="index-en.html">EN</a>
-</div>
-<a class="btn primary" id="waTop">WhatsApp</a>
 <!doctype html>
 <html lang="it">
 <head>
@@ -10,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Casa Picasso | Casa vacanze a Napoli Pianura · Appartamento 100 mq con terrazza</title>
-  <meta name="description" content="Casa Picasso è una casa vacanze a Napoli, nel quartiere Pianura. Appartamento intero di 100 mq con 2 camere, terrazza ampia, parcheggio facile e area lavoro con Wi-Fi. Prenotazione diretta via WhatsApp.">
+  <meta name="description" content="Casa Picasso è una casa vacanze a Napoli, nel quartiere Pianura. Appartamento intero di 100 mq con 2 camere, 5 ospiti (4+1), terrazza ampia, vista al tramonto, parcheggio facile e area lavoro con Wi-Fi. Prenotazione diretta via WhatsApp.">
 
-  <!-- STILE MEDITERRANEO CALDO -->
   <style>
     :root{
       --bg:#fbf3e6;
@@ -64,6 +58,7 @@
       border:1px solid var(--bd);background:var(--card);
       font-weight:900;font-size:14px;
       box-shadow:0 2px 0 rgba(34,26,20,.04);
+      cursor:pointer;
     }
     .btn.primary{background:var(--accent);border-color:var(--accent)}
     .btn.sunset{background:rgba(229,107,42,.12);border-color:rgba(229,107,42,.25)}
@@ -89,7 +84,7 @@
     .hero-left{
       padding:22px;border:1px solid rgba(239,220,198,.95);
       border-radius:var(--r);background:rgba(255,255,255,.72);
-      box-shadow:var(--shadow);position:relative
+      box-shadow:var(--shadow)
     }
     .hero-right{
       border:1px solid rgba(239,220,198,.95);
@@ -112,6 +107,7 @@
 
     .why{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .why div{border:1px solid rgba(239,220,198,.95);border-radius:18px;padding:14px;background:rgba(255,255,255,.75)}
+    .why p{margin:6px 0 0;color:var(--muted);font-size:13px}
 
     .gallery{
       display:grid;grid-template-columns:repeat(12,1fr);gap:10px
@@ -124,6 +120,10 @@
 
     .list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .li{border:1px solid rgba(239,220,198,.95);border-radius:18px;padding:12px;background:rgba(251,243,230,.65)}
+    .li b{display:block}
+    .li span{color:var(--muted);font-size:13px}
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
     footer{margin-top:22px;color:var(--muted);font-size:13px}
 
@@ -134,49 +134,52 @@
       box-shadow:0 14px 30px rgba(34,26,20,.18)
     }
 
+    /* Language switch */
+    .lang-switch{display:inline-flex}
+    .lang-switch a{
+      font-size:12px;font-weight:800;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(239,220,198,.95);
+      background:rgba(255,255,255,.75);
+      color:var(--muted);
+    }
+    .lang-switch a:hover{background:var(--accent);color:#221a14}
+
     @media(max-width:980px){
       h1{font-size:40px}
       .hero{grid-template-columns:1fr}
       nav{display:none}
       .why,.list{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
       .big,.med{grid-column:span 12;height:260px}
       .sm{grid-column:span 6;height:200px}
     }
-.lang-switch{
-  display:inline-flex;
-  gap:6px;
-}
-.lang-switch a{
-  font-size:12px;
-  font-weight:800;
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid rgba(239,220,198,.95);
-  background:rgba(255,255,255,.75);
-  color:var(--muted);
-}
-.lang-switch a:hover{
-  background:var(--accent);
-  color:#221a14;
-}
-
   </style>
 </head>
 
 <body>
+
 <header>
   <div class="head">
     <div class="brand">
       <img src="img/logo-casa-picasso.jpg" alt="Casa Picasso Napoli">
-      <div><strong>Casa Picasso</strong><br><span style="font-size:12px;color:var(--muted)">Napoli · Pianura</span></div>
+      <div>
+        <strong>Casa Picasso</strong><br>
+        <span style="font-size:12px;color:var(--muted)">Napoli · Pianura</span>
+      </div>
     </div>
+
     <nav>
       <a href="#perche">Perché noi</a>
       <a href="#pianura">Pianura</a>
       <a href="#foto">Foto</a>
       <a href="#contatti">Prenota</a>
     </nav>
-    <a class="btn primary" id="waTop">WhatsApp</a>
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="lang-switch"><a href="index-en.html">EN</a></div>
+      <a class="btn primary" id="waTop">WhatsApp</a>
+    </div>
   </div>
 </header>
 
@@ -188,19 +191,22 @@
       <span class="pill">Casa vacanze · Appartamento intero · 100 mq</span>
       <h1>Casa Picasso — Napoli (Pianura)</h1>
       <p class="sub">
-        Appartamento intero di 100 mq con 2 camere da letto, 5 ospiti (4+1),
-        terrazza ampia, vista al tramonto, parcheggio facile e area lavoro con Wi-Fi.
+        Appartamento intero di 100 mq con 2 camere da letto, posti letto fino a 5 (4+1),
+        terrazza ampia, vista al tramonto, parcheggio facile e area lavoro con Wi-Fi (stampante disponibile).
       </p>
+
       <div class="kpis">
         <div class="mini"><strong>100</strong><br>mq</div>
         <div class="mini"><strong>5</strong><br>ospiti</div>
-        <div class="mini"><strong>Terrazza</strong><br>vivibile</div>
+        <div class="mini"><strong>Terrazza</strong><br>spazio esterno</div>
       </div>
+
       <div style="margin-top:14px">
         <a class="btn primary" id="waHero">📲 Prenota su WhatsApp</a>
         <a class="btn sunset" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank">📍 Google Maps</a>
       </div>
     </div>
+
     <div class="hero-right">
       <img src="img/soggiorno-1-panorama.jpg" alt="Soggiorno Casa Picasso">
     </div>
@@ -211,10 +217,10 @@
     <h2>Perché scegliere Casa Picasso</h2>
     <div class="hr"></div>
     <div class="why">
-      <div><strong>Spazio reale</strong><p>100 mq veri, ideali per famiglie e piccoli gruppi.</p></div>
-      <div><strong>Terrazza e vista</strong><p>Spazio esterno coperto e vista suggestiva al tramonto.</p></div>
+      <div><strong>Spazio reale</strong><p>100 mq veri, perfetti per famiglie e piccoli gruppi.</p></div>
+      <div><strong>Terrazza + tramonto</strong><p>Relax all’aperto con vista suggestiva al tramonto.</p></div>
       <div><strong>Smart working</strong><p>Area lavoro con Wi-Fi e stampante.</p></div>
-      <div><strong>Parcheggio facile</strong><p>Sosta gratuita in zona e parcheggio ANM vicino.</p></div>
+      <div><strong>Parcheggio comodo</strong><p>Parcheggio gratuito in zona e parcheggio ANM vicino.</p></div>
       <div><strong>Bagno completo</strong><p>Doccia e vasca per il massimo comfort.</p></div>
       <div><strong>Cucina attrezzata</strong><p>Ideale per soggiorni brevi e lunghi.</p></div>
     </div>
@@ -225,14 +231,11 @@
     <h2>Il quartiere Pianura (Napoli)</h2>
     <div class="hr"></div>
     <p class="sub">
-      Casa Picasso si trova a <strong>Pianura</strong>, quartiere residenziale della zona occidentale di
-      <strong>Napoli</strong>. L’area è tranquilla, ben collegata e perfetta per visitare la città
-      evitando il traffico del centro storico.
+      Casa Picasso si trova a <strong>Pianura</strong>, quartiere residenziale della zona occidentale di <strong>Napoli</strong>.
+      Zona tranquilla e ben collegata, ideale per visitare la città evitando il traffico del centro storico.
     </p>
     <p class="sub">
-      Pianura è comoda per raggiungere <strong>Fuorigrotta</strong>, <strong>Bagnoli</strong>,
-      <strong>Posillipo</strong> e l’area flegrea. La disponibilità di parcheggi rende gli spostamenti
-      semplici anche in auto.
+      Pianura è comoda per <strong>Fuorigrotta</strong>, <strong>Bagnoli</strong> e <strong>Posillipo</strong>, con facilità di spostamento anche in auto grazie alla disponibilità di parcheggi.
     </p>
   </section>
 
@@ -253,11 +256,37 @@
     </div>
   </section>
 
+  <!-- SERVIZI + PARCHEGGIO -->
+  <section class="section grid2">
+    <div class="card" id="servizi">
+      <h2>Servizi</h2>
+      <div class="hr"></div>
+      <div class="list">
+        <div class="li"><b>Wi-Fi</b><span>Connessione stabile</span></div>
+        <div class="li"><b>Area lavoro</b><span>Scrivania + stampante</span></div>
+        <div class="li"><b>Cucina</b><span>Attrezzata</span></div>
+        <div class="li"><b>Bagno</b><span>Doccia + vasca</span></div>
+        <div class="li"><b>Terrazza</b><span>Ampia e vivibile</span></div>
+        <div class="li"><b>Parcheggio</b><span>Facile in zona</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="parcheggio">
+      <h2>Parcheggio</h2>
+      <div class="hr"></div>
+      <p class="sub">
+        Parcheggio gratuito su strada con buona disponibilità anche sotto casa. Parcheggio ANM Pianura nelle vicinanze.
+      </p>
+      <div style="height:12px"></div>
+      <a class="btn" href="https://maps.app.goo.gl/ssU3RBEyRAN8ceo48" target="_blank">🅿️ Parcheggio / Zona</a>
+    </div>
+  </section>
+
   <!-- CONTATTI -->
   <section class="section card" id="contatti">
     <h2>Prenota</h2>
     <div class="hr"></div>
-    <p class="sub">Contattaci direttamente su WhatsApp per disponibilità e prezzi.</p>
+    <p class="sub">Contattaci su WhatsApp per disponibilità e prezzi.</p>
     <a class="btn primary" id="waBottom">📲 Prenota su WhatsApp</a>
   </section>
 
@@ -266,27 +295,11 @@
 
 <a class="wa-float" id="waFloat">WhatsApp</a>
 
-<!-- DATI STRUTTURATI SEO -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"LodgingBusiness",
-  "name":"Casa Picasso",
-  "url":"https://casapicasso.it",
-  "telephone":"+3908118558253",
-  "address":{
-    "@type":"PostalAddress",
-    "addressLocality":"Pianura",
-    "addressRegion":"NA",
-    "addressCountry":"IT"
-  }
-}
-</script>
-
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
-  const wa = "https://wa.me/3908118558253?text=Ciao!%20Vorrei%20info%20per%20Casa%20Picasso";
+  const wa = "https://wa.me/3908118558253?text=Ciao!%20Vorrei%20informazioni%20per%20Casa%20Picasso.%0ADate:%20__%0AOspiti:%20__";
   ["waTop","waHero","waBottom","waFloat"].forEach(id=>document.getElementById(id).href=wa);
 </script>
+
 </body>
 </html>
